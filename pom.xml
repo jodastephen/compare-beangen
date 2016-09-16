@@ -76,6 +76,22 @@
           </properties>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.joda</groupId>
+        <artifactId>joda-beans-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>generate-sources</phase>
+          </execution>
+        </executions>
+        <configuration>
+          <indent>2</indent>
+        </configuration>
+      </plugin>
     </plugins>
     <!-- Manage plugin versions -->
     <pluginManagement>
@@ -229,11 +245,39 @@
       <artifactId>guava</artifactId>
       <version>18.0</version>
     </dependency>
-	<dependency>
+    <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value</artifactId>
       <version>1.2</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.immutables</groupId>
+      <artifactId>value</artifactId>
+      <version>2.2.10</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.41concepts</groupId>
+      <artifactId>valjogen-annotationprocessor</artifactId>
+      <version>2.0.0</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.10</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.joda</groupId>
+      <artifactId>joda-beans</artifactId>
+      <version>1.7</version>
+    </dependency>
+    <dependency>
+    <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>

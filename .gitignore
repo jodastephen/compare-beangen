@@ -24,3 +24,4 @@ test-output/
 .idea/
 !.idea/runConfigurations/
 atlassian-ide-plugin.xml
+/.factorypath
