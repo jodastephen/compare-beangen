@@ -149,6 +149,14 @@ public class PersonTest {
   }
 
   //-------------------------------------------------------------------------
+  public void testPojomaticPerson() {
+    PojomaticPerson test = new PojomaticPerson(NAME, DATE);
+    assertEquals(test.getName(), NAME);
+    assertEquals(test.getBirthDate(), DATE);
+    assertEquals(test.toString(), "PojomaticPerson{name: {Stephen}, birthDate: {2016-09-22}}");
+  }
+
+  //-------------------------------------------------------------------------
   public void testValjoPerson() {
     ValjoPerson test = ValjoPersonImpl.valueOf(NAME, DATE);
     assertEquals(test.getName(), NAME);
