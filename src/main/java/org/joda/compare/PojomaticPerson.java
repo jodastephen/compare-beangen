@@ -23,8 +23,7 @@ import org.pojomatic.annotations.AutoProperty;
 @AutoProperty
 public final class PojomaticPerson {
   // NOTES
-  // Requires setting up annotation processing
-
+  
   /**
    * The name of the person.
    */
