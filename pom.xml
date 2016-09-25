@@ -285,6 +285,12 @@
       <version>2.0.1</version>
     </dependency>
     <dependency>
+      <groupId>org.derive4j</groupId>
+      <artifactId>derive4j</artifactId>
+      <version>0.9.1</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>${testng.version}</version>
