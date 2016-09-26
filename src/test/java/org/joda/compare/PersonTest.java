@@ -15,10 +15,16 @@
  */
 package org.joda.compare;
 
+import static org.joda.compare.Derive4jClientInfos.ClientInfo;
+import static org.joda.compare.Derive4jClientInfos.modBirthDate;
+import static org.joda.compare.Derive4jPersons.Client;
+import static org.joda.compare.Derive4jPersons.getClient;
+import static org.joda.compare.Derive4jPersons.modClient;
 import static org.testng.Assert.assertEquals;
 
 import java.time.LocalDate;
 
+import java.util.Optional;
 import org.joda.compare.ide.EclipseImmutablePerson;
 import org.joda.compare.ide.EclipseMutablePerson;
 import org.joda.compare.ide.IntelliJImmutablePerson;
@@ -177,6 +183,19 @@ public class PersonTest {
     assertEquals(test.getName(), NAME);
     assertEquals(test.getBirthDate(), DATE);
     assertEquals(test.toString(), "JodaBeansPerson{name=Stephen, birthDate=2016-09-22}");
+  }
+
+  //-------------------------------------------------------------------------
+  public void testDerive4jPerson() {
+    Derive4jPerson person = Client(ClientInfo(NAME, DATE));
+    Optional<Derive4jClientInfo> maybeClient = getClient(person);
+    assertEquals(maybeClient.map(Derive4jClientInfos::getName), Optional.of(NAME));
+    assertEquals(maybeClient.map(Derive4jClientInfos::getBirthDate), Optional.of(DATE));
+    assertEquals(person.toString(), "Client(ClientInfo(Stephen, 2016-09-22))");
+    // let's modify birth-date, as it has a off by one error:
+    Derive4jPerson fixedBirthDatePerson =
+        modClient(modBirthDate(birthDate -> birthDate.plusDays(1))).apply(person);
+    assertEquals(fixedBirthDatePerson.toString(), "Client(ClientInfo(Stephen, 2016-09-23))");
   }
 
   //-------------------------------------------------------------------------
