@@ -20,6 +20,11 @@ This project compares the following projects:
 * [VALJOGen](http://valjogen.41concepts.com/)
 * One-off IDE generation by Eclipse and IntelliJ
 
+There are other "Bean" APT code generators (not currently used in this project):
+
+* [FreeBuilder](https://github.com/google/FreeBuilder)
+* [zerobuilder](https://github.com/h908714124/zerobuilder)
+
 Many other code generation tools exist for Java. This list is not exhaustive:
 
 * [Derive4J](https://github.com/derive4j/derive4j) - algebraic data types
