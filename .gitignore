@@ -1,0 +1,27 @@
+*~
+foo~
+*.class
+*.log
+*.pyc
+.project
+.classpath
+.checkstyle
+.pmd
+.clover/
+.settings/
+bin/
+target/
+temp/
+tests/classes/
+tests/output/
+test-output/
+.DS_Store
+
+# IntelliJ config files
+*.iws
+*.iml
+*.ids
+.idea/
+!.idea/runConfigurations/
+atlassian-ide-plugin.xml
+/.factorypath
